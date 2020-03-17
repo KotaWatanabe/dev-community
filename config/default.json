@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://KotaWatanabe:mtak3316@dev-connector-0usfs.mongodb.net/test?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://KotaWatanabe:mtak3316@dev-connector-0usfs.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret":"mysecrettoken"
 }
