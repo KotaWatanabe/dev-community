@@ -38,7 +38,7 @@ const EditProfile = ({ profile: { profile, loading },createProfile, getCurrentPr
             youtube: loading || !profile.social.youtube ? '' : profile.social.youtube,
             instagram: loading || !profile.social.instagram ? '' : profile.social.instagram,
         })
-    }, [loading]);
+    }, [loading, getCurrentProfile]);
 
     const {
         company,
