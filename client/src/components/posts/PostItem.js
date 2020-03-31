@@ -5,7 +5,6 @@ import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { addLike, removeLike, deletePost } from '../../actions/post';
 
-
 const PostItem = ({addLike, removeLike, deletePost,auth, 
     post: {
         _id,
@@ -54,7 +53,7 @@ const PostItem = ({addLike, removeLike, deletePost,auth,
                 <button      
                     type="button"
                     className="btn btn-danger"
-                    onClick={e => deletePost(_id)}
+                    onClick={() => deletePost(_id)}
                 >
                     <i className="fas fa-times"></i>
                 </button>
