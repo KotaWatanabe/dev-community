@@ -1,7 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://KotaWatanabe:mtak3316@dev-connector-0usfs.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret":"mysecrettoken",
-    "githubClientId":"9c575ff40ee873ff4e43",
-    "githubSecret":"98280c350f35aa1b3425e08fba8ec077c7148ef1",
-    "githubToken":"78de962f5f2d5ae814f1d39f6f1d4551f9491a7f"
-}
