@@ -2,15 +2,14 @@ import React,{Fragment, useEffect} from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getPosts } from '../../actions/post';
-import Spinner from '../layout/Spinner';
 import PostItem from './PostItem';
 import PostForm from './PostForm';
 
-const Posts = ({getPosts, post:{ posts, loading }}) => {
+const Posts = ({getPosts, post:{ posts }}) => {
     useEffect(() => {
         getPosts();
     },[getPosts])
-    return loading ? <Spinner /> : (
+    return (
         <Fragment>
             <h1 className="large text-primary">Posts</h1>
             <p className="lead">
@@ -24,7 +23,7 @@ const Posts = ({getPosts, post:{ posts, loading }}) => {
             </div>
         </Fragment>
     );
-}
+};
 
 Posts.propTypes = {
     getPosts: PropTypes.func.isRequired,

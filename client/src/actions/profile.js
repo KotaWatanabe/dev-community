@@ -24,7 +24,7 @@ export const getCurrentProfile = () => async dispatch => {
     } catch (err) {
         dispatch({
             type:PROFILE_ERROR,
-            error:{msg: err.response.statusText, status:err.response.status }
+            payload: { msg: err.response.statusText, status: err.response.status }
         })
     }
 };
@@ -42,8 +42,8 @@ export const getProfiles = () => async dispatch => {
     } catch (err) {
         dispatch({
             type:PROFILE_ERROR,
-            error:{msg: err.response.statusText, status:err.response.status }
-        })
+            payload: { msg: err.response.statusText, status: err.response.status }        
+        });
     }
 };
 
@@ -59,7 +59,7 @@ export const getProfileById = (userId) => async dispatch => {
     } catch (err) {
         dispatch({
             type:PROFILE_ERROR,
-            error:{msg: err.response.statusText, status:err.response.status }
+            payload: { msg: err.response.statusText, status: err.response.status }
         })
     }
 };
@@ -109,7 +109,7 @@ export const createProfile = (formData, history, edit = false) => async dispatch
         }
         dispatch({
             type:PROFILE_ERROR,
-            error:{msg: err.response.statusText, status:err.response.status }
+            payload: { msg: err.response.statusText, status: err.response.status }
         });
     }
 }
@@ -140,7 +140,7 @@ export const addExperience = (formData, history) => async dispatch => {
         }
         dispatch({
             type:PROFILE_ERROR,
-            error:{msg: err.response.statusText, status:err.response.status }
+            payload: { msg: err.response.statusText, status: err.response.status }
         });
     }
 }
@@ -170,7 +170,7 @@ export const addEducation = (formData, history) => async dispatch => {
         }
         dispatch({
             type:PROFILE_ERROR,
-            error:{msg: err.response.statusText, status:err.response.status }
+            payload: { msg: err.response.statusText, status: err.response.status }
         });
     }
 }
@@ -190,7 +190,7 @@ export const addEducation = (formData, history) => async dispatch => {
      } catch (err) {
         dispatch({
             type:PROFILE_ERROR,
-            error:{msg: err.response.statusText, status:err.response.status }
+            payload: { msg: err.response.statusText, status: err.response.status }
         });
      }
  }
@@ -210,7 +210,7 @@ export const addEducation = (formData, history) => async dispatch => {
      } catch (err) {
         dispatch({
             type:PROFILE_ERROR,
-            error:{msg: err.response.statusText, status:err.response.status }
+            payload: { msg: err.response.statusText, status: err.response.status }
         });
      }
  }
@@ -230,7 +230,7 @@ export const addEducation = (formData, history) => async dispatch => {
         } catch (err) {
            dispatch({
                type:PROFILE_ERROR,
-               error:{msg: err.response.statusText, status:err.response.status }
+               payload: { msg: err.response.statusText, status: err.response.status }
            });
         }
      }

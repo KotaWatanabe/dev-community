@@ -10,15 +10,23 @@ import ProfileEducation from './ProfileEducation';
 import ProfileGithub from './ProfileGithub';
 import { getProfileById } from '../../actions/profile';
 
-const Profile = ({ match,getProfileById, profile:{ profile, loading}, auth }) => {
+const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
+    /*
+     use a nullProfile boolean to safely add to useEffect
+     adding profile to useEffect would trigger the function
+     as profile is an object and object's are reference types
+  */
+    const nullProfile = !profile;
     useEffect(() => {
-        getProfileById(match.params.id);
-    },[getProfileById, match.params.id]);
+      getProfileById(match.params.id);
+    }, [getProfileById, match.params.id, nullProfile]);
 
     return (
         <Fragment>
-            {profile === null || loading ? <Spinner /> : 
-            <Fragment>
+            {profile === null ? (
+                <Spinner />
+            ) : (
+                <Fragment>
                 <Link to='/profiles' className='btn btn-light'>
                     Back to Profiles
                 </Link>
@@ -54,9 +62,10 @@ const Profile = ({ match,getProfileById, profile:{ profile, loading}, auth }) =>
                         <ProfileGithub username={profile.githubusername}/>
                     )}
                 </div>
-            </Fragment>}
+            </Fragment>
+            )}
         </Fragment>
-    )
+    );
 }
 
 Profile.propTypes = {
